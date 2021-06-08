@@ -1,0 +1,28 @@
+html {
+    background-color: #252525;
+}
+
+h1 {
+    font-family: Rajdhani-Bold;
+}
+
+body {
+    background-color: #252525;
+    color: white;
+    margin: 0;
+    font-family: Rajdhani;
+}
+
+@font-face {
+    font-family: "Rajdhani";
+    src: local("Rajdhani"),
+        url("../fonts/Rajdhani-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Rajdhani-Bold";
+    src: local("Rajdhani-Bold"),
+        url("../fonts/Rajdhani-Bold.ttf") format("truetype");
+    font-weight: normal;
+}

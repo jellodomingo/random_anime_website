@@ -1,0 +1,105 @@
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.title h1 {
+    padding: 50px 50px 50px 50px;
+    position: relative;
+    animation: title 0.5s linear forwards;
+}
+
+
+@keyframes title {
+    0% {
+        opacity: 0;
+        top: -50px;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+        top: 0px;
+    }
+}
+
+.synopsis-title {
+    font-size: 150%;
+}
+
+.trailer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 50px;
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.synopsis {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.stats {
+    padding-bottom: 150px;
+}
+
+.seasons {
+    display: flex;
+    justify-content: center;
+}
+
+.year_selector {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.colorSpring {
+    animation: spring 0.2s linear forwards;
+}
+
+@keyframes spring {
+    0% {fill:white}
+    100% {fill: #35713B}
+}
+
+.colorSummer {
+    animation: summer 0.2s linear forwards;
+}
+
+@keyframes summer {
+    0% {fill:white}
+    100% {fill: #A89220}
+}
+
+.colorFall {
+    animation: fall 0.2s linear forwards;
+}
+
+@keyframes fall {
+    0% {fill:white}
+    100% {fill: #A04F35}
+}
+
+.colorWinter {
+    animation: winter 0.2s linear forwards;
+}
+
+@keyframes winter {
+    0% {fill:white}
+    100% {fill: #5798AD}
+}
+
+.normal {
+    fill: white;
+}

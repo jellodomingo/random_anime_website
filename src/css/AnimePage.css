@@ -1,0 +1,57 @@
+.data-enter {
+    opacity: 0;
+}
+
+.data-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.data-exit {
+    opacity: 1;
+}
+
+.data-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.back-button-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.image-container {
+    margin: auto;
+    justify-content: center;
+    display: flex;
+}
+
+.episodes {
+    justify-content: center;
+    align-items: center;   
+}
+
+.seasons {
+    justify-content: center;
+    align-items: center;   
+}
+
+.year {
+    justify-content: center;
+    align-items: center;   
+}
+
+.score {
+    justify-content: center;
+    align-items: center;   
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.stats {
+    height: 100px;
+}
