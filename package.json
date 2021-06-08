@@ -1,6 +1,6 @@
 {
-  "homepage": "http://jellodomingo.github.io/randomanime",
-  "name": "anime-website",
+  "homepage": "http://jellodomingo.github.io/randomanime/",
+  "name": "random-anime-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
