@@ -1,5 +1,5 @@
 {
-  "homepage": "http://jellodomingo.github.io/randomanime/",
+  "homepage": "http://jellodomingo.github.io/random_anime_website/",
   "name": "random-anime-website",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.14",
+    "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "axios": "^0.21.1",
     "bootstrap": "4.6.0",
@@ -20,6 +21,7 @@
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
     "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-transition-group": "^4.4.2",
     "reactstrap": "^8.9.0",

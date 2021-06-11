@@ -1,22 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../context';
 import { getRandomSeasonalAnime, getAllSeasonsAvailable } from '../api/jikan';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import { Input } from 'reactstrap'
-import { useHistory } from 'react-router';
 import { ReactComponent as Fall } from '../icons/autumn-leaf.svg';
 import { ReactComponent as Spring } from '../icons/florist.svg';
 import { ReactComponent as Summer } from '../icons/sun.svg';
 import { ReactComponent as Winter } from '../icons/winter-snowman.svg';
 import "../css/MainPage.css";
 
+import Anime from './AnimePage';
+
 const MainPage = () => {
-    const [year, setYear] = useState(2021);
-    const [season, setSeason] = useState('fall');
+    const appContext = useContext(AppContext);
 
-    // getAllSeasonsAvailable
     const [data, setData] = useState([]);
-
-    const history = useHistory();
 
     const getYearData = async () => {
         const data = await getAllSeasonsAvailable();
@@ -39,6 +37,7 @@ const MainPage = () => {
     };
 
     const colorSelected = (seasonIcon: string): string => {
+        const { season } = appContext.appState;
         if(seasonIcon === season) {
             return seasonColor[season];
         } else {
@@ -47,19 +46,15 @@ const MainPage = () => {
     }
 
     const handleSubmit = async () => {
+        const { year, season } = appContext.appState;
         const data: any = await getRandomSeasonalAnime(year, season);
-        console.log(data);
 
         if(data === undefined) {
             alert("No anime found");
         } else {
-            history.push('/anime', { 
-                id: data.mal_id,
-                year: year,
-                season: season
-            });
+            appContext.setId(Number(data.mal_id));
+            appContext.setPage(<Anime id={data.mal_id}/>)
         }
-    
     }
 
     useEffect(() => {
@@ -82,7 +77,7 @@ const MainPage = () => {
                                 className={colorSelected('winter')}
                                 width='100%' 
                                 height='100%'
-                                onClick={() => setSeason('winter')}
+                                onClick={() => appContext.setSeason('winter')}
                             />
                         </Col>
                         <Col>
@@ -90,7 +85,7 @@ const MainPage = () => {
                                 className={colorSelected('spring')}
                                 width='80%' 
                                 height='100%' 
-                                onClick={() => setSeason('spring')}
+                                onClick={() => appContext.setSeason('spring')}
                             />
                         </Col>
                         <Col>
@@ -98,7 +93,7 @@ const MainPage = () => {
                                 className={colorSelected('summer')}
                                 width='80%' 
                                 height='100%'
-                                onClick={() => setSeason('summer')}
+                                onClick={() => appContext.setSeason('summer')}
                             />
                         </Col>
                         <Col>
@@ -106,7 +101,7 @@ const MainPage = () => {
                                 className={colorSelected('fall')}
                                 width='100%' 
                                 height='100%'
-                                onClick={() => setSeason('fall')}
+                                onClick={() => appContext.setSeason('fall')}
                             />
                         </Col>
                     </Row>
@@ -119,7 +114,7 @@ const MainPage = () => {
                         <Input 
                             type="select"
                             onChange={(event) => {
-                                setYear(Number(event.target.value))
+                                appContext.setYear(Number(event.target.value))
                             }}
                         >
                             {getYearDropdown()}

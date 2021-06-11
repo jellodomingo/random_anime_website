@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../context';
 import { getAnimeById } from '../api/jikan';
-import { useHistory, useLocation} from 'react-router';
 import { Row, Col, Container, Image, Button } from 'react-bootstrap';
 import '../css/AnimePage.css';
 import { ReactComponent as Fall } from '../icons/autumn-leaf.svg';
@@ -12,11 +12,7 @@ import Loading from './Loading';
 import { CSSTransition } from 'react-transition-group';
 import ReactPlayer from 'react-player/youtube'
 
-interface LocationState {
-    id: number,
-    year: number,
-    season: string
-}
+import Main from './MainPage';
 
 interface ScoreCircleProps {
     score: number
@@ -34,16 +30,16 @@ const ScoreCircle = styled.circle<ScoreCircleProps>`
     animation: ${props => ratingAnimation(props.score)} 0.5s linear forwards;
 `;
 
-const AnimePage = () => {
+interface Props {
+    id: number
+}
+
+const AnimePage = ({ id } : Props) => {
+    const appContext = useContext(AppContext);
+
     const [loading, setLoading] = useState(true);
     const [ready, setReady] = useState(false);
     const [data, setData] = useState<any>({});
-
-    const history = useHistory();
-    const locationData = useLocation<LocationState>();
-    const id = locationData.state?.id ?? 40748;
-    const backUpYear = locationData.state?.year ?? 2020;
-    const backUpSeason = locationData.state?.season ?? 'fall';
 
     const getPercentForCircle = (rating: number) => {
         console.log(251 - (251 * (rating / 10)));
@@ -54,7 +50,7 @@ const AnimePage = () => {
     }
 
     const goBack = () => {
-        history.goBack();
+        appContext.setPage(<Main/>);
     }
 
     const getSeason = (premiere: string) => {
@@ -81,9 +77,8 @@ const AnimePage = () => {
     }
 
     const getData = async () => {
-        console.log(id);
+        console.log(id)
         const data = await getAnimeById(id);
-        console.log(data);
         setData(data.data);
         setLoading(false);
         return data;
@@ -91,6 +86,7 @@ const AnimePage = () => {
     
     useEffect(() => {
         getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
@@ -149,7 +145,7 @@ const AnimePage = () => {
                                     </Row>
                                     <Row className="seasons">
                                         <h1>
-                                            {getSeasonIcon(data.premiered ? getSeason(data.premiered) : backUpSeason)}
+                                            {getSeasonIcon(data.premiered ? getSeason(data.premiered) : '??')}
                                         </h1>
                                     </Row>
                                 </Col>
@@ -161,7 +157,7 @@ const AnimePage = () => {
                                     </Row>
                                     <Row className="year">
                                         <h1>
-                                            {data.premiered ? getYear(data.premiered) : backUpYear}
+                                            {data.premiered ? getYear(data.premiered) : '??'}
                                         </h1>
                                     </Row>
                                 </Col>

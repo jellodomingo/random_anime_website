@@ -1,24 +1,43 @@
-import { Router, Switch, Route} from 'react-router';
-import { createBrowserHistory } from 'history';
+import React from 'react';
 import Main from './components/MainPage';
-import Anime from './components/AnimePage';
+import { AppContext } from './context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
 function App() {
-    const customHistory = createBrowserHistory();
+    const [appState, setAppState] = React.useState({
+        id: 40748,
+        season: 'fall',
+        year: 2020,
+        page: <Main/>
+    });
+    
+    const setId = (id: number) => {
+        setAppState({...appState, id: id});
+    }
+
+    const setSeason = (season: string) => {
+        setAppState({...appState, season: season});
+    }
+
+    const setYear = (year: number) => {
+        setAppState({...appState, year: year});
+    }
+
+    const setPage = (page: JSX.Element) => {
+        setAppState({...appState, page: page});
+    }
 
     return (
-        <Router history={customHistory}>
-            <Switch>
-                <Route exact path="/">
-                    <Main/>
-                </Route>
-                <Route path="/anime">
-                    <Anime/>
-                </Route>
-            </Switch>
-        </Router>
+        <AppContext.Provider value={{
+            appState: appState,
+            setId: setId,
+            setSeason: setSeason,
+            setYear: setYear,
+            setPage: setPage
+        }}>
+            {appState.page}
+        </AppContext.Provider>
     );
 }
 
