@@ -4,8 +4,11 @@ A small React app written in Typescript using the Jikan API to get a random anim
 
 ## Libraries and Frameworks Used
 - React
+- Typescript
 - Context API
+- Axios
 - Styled Components
+- React Transition Group
 
 ## APIs
 - Jikan API
