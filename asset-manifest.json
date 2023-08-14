@@ -1,30 +1,21 @@
 {
   "files": {
-    "main.css": "/random_anime_website/static/css/main.45cfaf7d.chunk.css",
-    "main.js": "/random_anime_website/static/js/main.4f1db2ec.chunk.js",
-    "main.js.map": "/random_anime_website/static/js/main.4f1db2ec.chunk.js.map",
-    "runtime-main.js": "/random_anime_website/static/js/runtime-main.12061759.js",
-    "runtime-main.js.map": "/random_anime_website/static/js/runtime-main.12061759.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/random_anime_website/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.8bca6652.chunk.js": "/random_anime_website/static/js/2.8bca6652.chunk.js",
-    "static/js/2.8bca6652.chunk.js.map": "/random_anime_website/static/js/2.8bca6652.chunk.js.map",
-    "static/js/3.ed3618bf.chunk.js": "/random_anime_website/static/js/3.ed3618bf.chunk.js",
-    "static/js/3.ed3618bf.chunk.js.map": "/random_anime_website/static/js/3.ed3618bf.chunk.js.map",
+    "main.css": "/random_anime_website/static/css/main.d6e065e1.css",
+    "main.js": "/random_anime_website/static/js/main.852d5653.js",
+    "static/js/787.9b07c140.chunk.js": "/random_anime_website/static/js/787.9b07c140.chunk.js",
+    "static/media/Rajdhani-Bold.ttf": "/random_anime_website/static/media/Rajdhani-Bold.0d5cc77aaa325cbb9ce5.ttf",
+    "static/media/Rajdhani-Regular.ttf": "/random_anime_website/static/media/Rajdhani-Regular.955ad2c739164f2b01b6.ttf",
+    "static/media/sun.svg": "/random_anime_website/static/media/sun.5528861fb60050fcd980a8af64e6b62e.svg",
+    "static/media/autumn-leaf.svg": "/random_anime_website/static/media/autumn-leaf.63d2371c69eef5ae0defbc1a1e0f8e96.svg",
     "index.html": "/random_anime_website/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/random_anime_website/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.45cfaf7d.chunk.css.map": "/random_anime_website/static/css/main.45cfaf7d.chunk.css.map",
-    "static/js/2.8bca6652.chunk.js.LICENSE.txt": "/random_anime_website/static/js/2.8bca6652.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/random_anime_website/static/media/Rajdhani-Regular.955ad2c7.ttf",
-    "static/media/autumn-leaf.63d2371c.svg": "/random_anime_website/static/media/autumn-leaf.63d2371c.svg",
-    "static/media/florist.5bbf5ba6.svg": "/random_anime_website/static/media/florist.5bbf5ba6.svg",
-    "static/media/sun.5528861f.svg": "/random_anime_website/static/media/sun.5528861f.svg",
-    "static/media/winter-snowman.454f17da.svg": "/random_anime_website/static/media/winter-snowman.454f17da.svg"
+    "static/media/florist.svg": "/random_anime_website/static/media/florist.5bbf5ba6dbcf26f9582390c433a929a2.svg",
+    "static/media/winter-snowman.svg": "/random_anime_website/static/media/winter-snowman.454f17da78be9751ad2cb819f13b4433.svg",
+    "main.d6e065e1.css.map": "/random_anime_website/static/css/main.d6e065e1.css.map",
+    "main.852d5653.js.map": "/random_anime_website/static/js/main.852d5653.js.map",
+    "787.9b07c140.chunk.js.map": "/random_anime_website/static/js/787.9b07c140.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.12061759.js",
-    "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.8bca6652.chunk.js",
-    "static/css/main.45cfaf7d.chunk.css",
-    "static/js/main.4f1db2ec.chunk.js"
+    "static/css/main.d6e065e1.css",
+    "static/js/main.852d5653.js"
   ]
 }
