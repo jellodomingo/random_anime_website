@@ -17,9 +17,9 @@ const MainPage = () => {
     const [data, setData] = useState([]);
 
     const getYearData = async () => {
-        const data = await getAllSeasonsAvailable();
-        const archive = data.data.archive;
-        setData(archive);
+        const response = await getAllSeasonsAvailable();
+        const data = response.data;
+        setData(data.data);
     }
 
     const getYearDropdown = () => {

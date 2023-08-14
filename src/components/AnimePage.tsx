@@ -79,7 +79,7 @@ const AnimePage = ({ id } : Props) => {
     const getData = async () => {
         console.log(id)
         const data = await getAnimeById(id);
-        setData(data.data);
+        setData(data.data.data);
         setLoading(false);
         return data;
     }
@@ -203,14 +203,14 @@ const AnimePage = ({ id } : Props) => {
                         </Col>
                         <Col md={4} className="image-container">
                             <Image className="image"
-                                src={data.image_url}
+                                src={data.images.jpg.image_url}
                             />
                         </Col>
                     </Row> 
                     <Row className="trailer">
-                        {data.trailer_url && 
+                        {data.trailer.url && 
                             <ReactPlayer 
-                                url={data.trailer_url}
+                                url={data.trailer.embed_url}
                                 width='100%'
                             /> }
                     </Row>
