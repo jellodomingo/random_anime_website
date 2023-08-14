@@ -13,9 +13,9 @@ export const getRandomSeasonalAnime = async (year: number, season: string) => {
 }
 
 export const getAnimeById = async (id: number) => {
-    return await axios.get(`https://api.jikan.moe/v3/anime/${id}`);
+    return await axios.get(`https://api.jikan.moe/v4/anime/${id}`);
 }
 
 export const getAllSeasonsAvailable = async () => {
-    return await axios.get(`https://api.jikan.moe/v3/season/archive`);
+    return await axios.get(`https://api.jikan.moe/v4/season/archive`);
 }
