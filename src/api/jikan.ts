@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getSeasonalAnime = async (year: number, season: string) => {
-    return await axios.get(`https://api.jikan.moe/v3/season/${year}/${season}`);
+    return await axios.get(`https://api.jikan.moe/v4/season/${year}/${season}`);
 };
 
 export const getRandomSeasonalAnime = async (year: number, season: string) => {
