@@ -72,10 +72,6 @@ const AnimePage = ({ id }: Props) => {
     }
   };
 
-  const getYear = (premiere: string) => {
-    return premiere.split(" ")[1];
-  };
-
   const getData = async () => {
     console.log(id);
     const data = await getAnimeById(id);
